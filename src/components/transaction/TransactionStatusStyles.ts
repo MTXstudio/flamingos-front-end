@@ -28,30 +28,28 @@ export const Status = styled.div`
 `
 
 export const Pending = styled(Status)`
-  background-color: #0C0922;
-  color: white;
-  border: 2px solid #EF8395;
+  background-color: #FFF;
+  color: #EF8395;
   font-family: 'Roboto';
 `
 
 export const Success = styled(Status)`
   background-color: #EF8395;
-  border: 2px solid #EF8395;
+  height: 100%;
   color: white;
   font-family: 'Roboto';
 `
 
 export const Error = styled(Status)`
-  background-color: #0C0922;
-  border: 2px solid #0C0922;
+  background-color: #FFF;
   color: red;
   font-family: 'Roboto';
 `
 
 export const Message = styled.div`
   font-size: 0.9em;
-  background-color: #0C0922;
-  border: 2px solid #0C0922;
+  background-color: #FFF;
+  border: 2px solid #EF8395;
   color: white;
 `
 

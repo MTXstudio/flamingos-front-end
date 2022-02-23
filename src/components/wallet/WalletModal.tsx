@@ -19,7 +19,7 @@ const WalletModal = () => {
         </div>
         <div className={styles.textNotification}>
           Please check that you are connected to the{' '}
-          {appConfig.chainId === 43114 ? 'Avax Mainnet' : 'Avax Testnet'} Network.
+          {appConfig.chainId === 137 ? 'Polygon Mainnet' : 'Polygon Testnet'} Network.
         </div>
       </>
     )

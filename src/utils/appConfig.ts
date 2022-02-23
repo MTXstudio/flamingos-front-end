@@ -3,10 +3,10 @@ export const etherAddress = '0x0000000000000000000000000000000000000000' //ETH
 
 const configurations: { [env: string]: Configuration } = {
   development: {
-    chainId: 4002,
-    contractAddress: '0x365303e68551a5511bbec8dcff9f43603a469517',
-    defaultProvider: `https://rpc.testnet.fantom.network/`,
-    etherscanUrl: 'https://testnet.ftmscan.com/',
+    chainId: 80001,
+    contractAddress: '0x7dBE30485c71263CB987B1F67aD18E7A9d83EE9c',
+    defaultProvider: `https://rpc-mumbai.maticvigil.com/`,
+    etherscanUrl: 'https://polygonscan.com/',
     refreshInterval: 10000,
     gasLimitMultiplier: 1.1,
   },
@@ -20,8 +20,8 @@ const configurations: { [env: string]: Configuration } = {
   },
 }
 
-export default configurations['production']
-//export default configurations['development']
+// export default configurations['production']
+export default configurations['development']
 
 export type Configuration = {
   chainId: number
