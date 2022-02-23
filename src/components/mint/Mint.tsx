@@ -1,4 +1,4 @@
-//import MintButton from '../mintButton/MintButton'
+import MintButton from '../mintButton/MintButton'
 import MintProgress from '../mintProgress/MintProgress'
 import styles from './Mint.module.scss'
 import ClubSign from '../../assets/pfsc_sign.svg'
@@ -34,17 +34,10 @@ const Mint = () => {
         the secrets of the infamous Pink Flamingo Social Club.
       </div>
       <MintProgress />
-      {/* <div className={styles.buttons}>
+      <div className={styles.buttons}>
         <MintButton />
         {isEligible && <RedeemButton />}
-      </div> */}
-      {isEligible ? (
-        <RedeemButton />
-      ) : (
-        <div className={styles.description}>
-          Not eligible for redemption. Wait for public mint.
-        </div>
-      )}
+      </div>
     </div>
   )
 }
