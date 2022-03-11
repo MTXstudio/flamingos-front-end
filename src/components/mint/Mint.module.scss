@@ -18,6 +18,14 @@
     height: 100vh;
     height: auto;
   }
+
+  @media only screen and (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 2fr 1.5fr;
+  }
 }
 
 .titleSvg {
@@ -50,6 +58,22 @@
 
   @media only screen and (max-width: 600px) {
     position: relative;
+  }
+
+  @media only screen and (min-width: 600px) {
+    width: 90%;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 80%;
+  }
+
+  @media only screen and (min-width: 992px) {
+    width: 70%;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 60%;
   }
 }
 
