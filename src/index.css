@@ -4,3 +4,10 @@
      url("./fonts/Gotham/GothamMedium.ttf") format("truetype");
     font-weight: medium;
 }
+
+@font-face {
+  font-family: 'Heavitas.ttf';
+  src: local('Heavitas'), url(./fonts/Heavitas.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
