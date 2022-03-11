@@ -3,18 +3,18 @@ export const etherAddress = '0x0000000000000000000000000000000000000000' //ETH
 
 const configurations: { [env: string]: Configuration } = {
   development: {
-    chainId: 80001,
-    contractAddress: '0x7dBE30485c71263CB987B1F67aD18E7A9d83EE9c',
-    defaultProvider: `https://rpc-mumbai.maticvigil.com/`,
+    chainId: 4002,
+    contractAddress: '0xA87FDe4E0D7bb0105a53227fa1327d57fB75f05D',
+    defaultProvider: 'https://rpc.testnet.fantom.network/',
     etherscanUrl: 'https://polygonscan.com/',
     refreshInterval: 10000,
     gasLimitMultiplier: 1.1,
   },
   production: {
-    chainId: 137,
-    contractAddress: '0x231E9a191598B7eBA9c374118c9abcF6d2ba41dF',
-    defaultProvider: 'https://polygon-mainnet.infura.io/v3/2439bdab3d89488ca4f1960fab3a85b8',
-    etherscanUrl: 'https://explorer.matic.network/',
+    chainId: 250,
+    contractAddress: '0x5ED7893B8cf0F9199Aa2760648779cB5d96716Ae',
+    defaultProvider: 'https://rpc.ftm.tools/',
+    etherscanUrl: 'https://ftmscan.com',
     refreshInterval: 10000,
     gasLimitMultiplier: 1.1,
   },

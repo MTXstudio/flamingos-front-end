@@ -11,9 +11,12 @@ import passport from '../../assets/passport.svg'
 import multilogo from '../../assets/mulit-logo.svg'
 
 const Mint = () => {
-  const { checkIfEligibleForAirdrop } = useFlamingo()
-  const [isEligible, setIsEligible] = useState<boolean>(false)
 
+
+  const { checkIfEligibleForAirdrop, decreaseAmount, increaseAmount, counter } = useFlamingo()
+  const [isEligible, setIsEligible] = useState<boolean>(false)
+  const [buyAmount, setBuyAmount] = useState<number>(1)
+ 
   useEffect(() => {
     const data = async () => {
       const isEligible = await checkIfEligibleForAirdrop()
@@ -39,6 +42,17 @@ const Mint = () => {
                 <img src={passport} alt='passport' className={styles.passport}/>
               </div>
                 <MintProgress />
+              <div className={styles.amountWrapper}>
+                <div>
+                  <button onClick={() => decreaseAmount()} className={styles.amountButton}>-</button>
+                </div>
+                <div className={styles.amount}>
+                  {counter}
+                </div>
+                <div>
+                  <button onClick={() => increaseAmount()} className={styles.amountButton}>+</button>
+                </div>
+              </div>
               <div className={styles.buttonWrapper}>
                 <MintButton />
               </div>

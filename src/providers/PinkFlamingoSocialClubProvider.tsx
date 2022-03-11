@@ -1,4 +1,4 @@
-import { createContext, ReactElement, ReactNode, useCallback, useContext } from 'react'
+import { createContext, ReactElement, ReactNode, useCallback, useContext, useState } from 'react'
 
 import { Contract, ethers } from 'ethers'
 import appConfig from '../utils/appConfig'
@@ -21,6 +21,9 @@ interface PinkFlamingoSocialClubProviderValue {
     maxInvocations: number
   }>
   checkIfEligibleForAirdrop: () => Promise<boolean | undefined>
+  increaseAmount: () => void
+  decreaseAmount: () => void
+  counter: number
 }
 
 const PinkFlamingoSocialClubContext = createContext({} as PinkFlamingoSocialClubProviderValue)
@@ -29,6 +32,25 @@ function PinkFlamingoSocialClubProvider({ children }: { children: ReactNode }): 
   const { wallet } = useWeb3()
   const { account } = useWallet()
   const { pushTransaction, waitForReceipt } = useTransaction()
+  const [counter, setCounter] = useState<number>(1)
+
+  const increaseAmount = () => {
+    if(counter >= 10) {
+      console.log('amount too big')
+    } else {
+      setCounter(counter => counter + 1)
+      console.log(counter)
+    }
+  }
+
+  const decreaseAmount = () => {
+    if(counter <= 1) {
+      console.log('amount too small')
+    } else {
+      setCounter(counter => counter - 1)
+      console.log(counter)
+    }
+  }
 
   const price = useCallback(async (collectionID: number) => {
     const contract = new Contract(appConfig.contractAddress, abi.abi, getDefaultProvider())
@@ -40,21 +62,22 @@ function PinkFlamingoSocialClubProvider({ children }: { children: ReactNode }): 
   const purchase = useCallback(async () => {
     if (!wallet || !account) return
     const contract = new Contract(appConfig.contractAddress, abi.abi, wallet.signer)
-    const value = (await contract.tokenPriceInWei()).toString()
+    const value = ((await contract.tokenPriceInWei())*counter).toString()
     const options = {
       value,
     }
-    const tx = await contract.mintFlamingo(options)
+    console.log(counter)
+    const tx = await contract.mintPassport(counter, options)
     pushTransaction(tx)
     await tx.wait(1)
     const receipt = await waitForReceipt(tx)
     console.log(receipt)
-  }, [account, wallet, pushTransaction, waitForReceipt])
+  }, [account, wallet, pushTransaction, waitForReceipt, setCounter, counter])
 
   const mintedAndMax = useCallback(async (collectionID: number) => {
     const contract = new Contract(appConfig.contractAddress, abi.abi, getDefaultProvider())
     const invocations = (await contract.totalSupply()).toNumber() as number
-    const maxInvocations = 777
+    const maxInvocations = 500
 
     return { invocations, maxInvocations }
   }, [])
@@ -84,6 +107,9 @@ function PinkFlamingoSocialClubProvider({ children }: { children: ReactNode }): 
           price,
           mintedAndMax,
           checkIfEligibleForAirdrop,
+          counter, 
+          increaseAmount, 
+          decreaseAmount
         } as PinkFlamingoSocialClubProviderValue
       }
     >

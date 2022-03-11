@@ -19,7 +19,7 @@ const WalletModal = () => {
         </div>
         <div className={styles.textNotification}>
           Please check that you are connected to the{' '}
-          {appConfig.chainId === 137 ? 'Polygon Mainnet' : 'Polygon Testnet'} Network.
+          {appConfig.chainId === 250 ? 'Fantom' : 'Fantom Testnet'} Network.
         </div>
       </>
     )

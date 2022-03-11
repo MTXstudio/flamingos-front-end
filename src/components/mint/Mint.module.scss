@@ -55,6 +55,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 30px 0px #EE8394;
 
   @media only screen and (max-width: 600px) {
     position: relative;
@@ -156,4 +157,37 @@
 
 .redeem {
   margin-left: 10px;
+}
+
+
+// Amount 
+.amountWrapper {
+  width: "100%";
+  text-align: center;
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr;
+  margin-bottom: 20px;
+  // border: 2px solid #EF8395; 
+  padding: 6px;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 6px;
+}
+
+.amountButton {
+  background-color: #2C2640;
+  border: 2px solid #EF8395;
+  color: #EF8395;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 25px;
+  height: 25px;
+}
+
+.amount {
+  font-size: 18px;
+  color: #EF8395;
+  font-weight: 600;
+  font-family: "Roboto";
 }
