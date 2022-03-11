@@ -10,7 +10,7 @@ export class Wallet {
   constructor(cfg: Configuration) {
     const network: ethers.providers.Networkish = {
       chainId: appConfig.chainId,
-      name: 'fantom',
+      name: 'Polygon Mainnet',
     }
     const provider = new ethers.providers.JsonRpcProvider(appConfig.defaultProvider, network)
     this.config = cfg
