@@ -13,15 +13,15 @@ const configurations: { [env: string]: Configuration } = {
   production: {
     chainId: 137,
     contractAddress: '0x231E9a191598B7eBA9c374118c9abcF6d2ba41dF',
-    defaultProvider: `https://polygon-rpc.com/`,
+    defaultProvider: 'https://polygon-mainnet.infura.io/v3/2439bdab3d89488ca4f1960fab3a85b8',
     etherscanUrl: 'https://explorer.matic.network/',
     refreshInterval: 10000,
     gasLimitMultiplier: 1.1,
   },
 }
 
-// export default configurations['production']
-export default configurations['development']
+export default configurations['production']
+// export default configurations['development']
 
 export type Configuration = {
   chainId: number
