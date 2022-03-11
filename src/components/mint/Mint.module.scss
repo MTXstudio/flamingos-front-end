@@ -16,11 +16,16 @@
   @media only screen and (max-width: 600px) {
     grid-template-columns: 1fr;
     height: 100vh;
+    height: auto;
   }
 }
 
 .titleSvg {
   width: 70%;
+
+  @media only screen and (max-width: 600px) {
+    width: 60%;
+  }
 }
 
 .container {
@@ -50,11 +55,19 @@
 
 .multisign {
   height: 250px;
+
+  @media only screen and (max-width: 600px) {
+    height: 150px;
+  }
 }
 
 .passport {
   height: 200px;
   margin: auto;
+
+  @media only screen and (max-width: 600px) {
+    height: 150px;
+  }
 }
 
 .multilogo {
@@ -76,6 +89,7 @@
   @media only screen and (max-width: 600px) {
     width: 100%; 
     text-align: center;
+    padding: 0px; 
   }
 }
 

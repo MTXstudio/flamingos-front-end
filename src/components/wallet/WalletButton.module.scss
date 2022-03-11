@@ -1,32 +1,32 @@
 .button {
   text-transform: uppercase;
-  background-color: #7951DD;
+  background-color: #EA8597;
   color: white;
   padding: 7.5px 15px;
   font-size: 12px;
   font-weight: 600;
-  border: 2px solid #7951DD;
+  border: 2px solid #EA8597;
   border-radius: 4px;
   font-family: 'Roboto', sans-serif;
 }
 
 .button:hover {
-  background-color: #fff;
+  background-color: #1B1524;
   border: 1px solid black;
-  color:  #7951DD;
+  color:  #EA8597;
   cursor: pointer;
-  border: 2px solid #7951DD;
+  border: 2px solid #EA8597;
   border-radius: 4px;
 }
 
 .buttonConnected {
   text-transform: uppercase;
-  background-color: #FFF;
-  color: #7951DD;
+  background-color: #1B1524;
+  color: #EA8597;
   padding: 7.5px 15px;
   font-size: 12px;
   font-weight: 600;
-  border: 2px solid #7951DD;
+  border: 2px solid #EA8597;
   border-radius: 4px;
   font-family: 'Roboto', sans-serif;
 }
@@ -47,9 +47,9 @@
 
 .modalWrapper {
   max-width: 400px;
-  background-color: #FFF;
-  border: 2px solid #7951DD;
-  color: #7951DD;
+  background-color: #1B1524;
+  border: 2px solid #EA8597;
+  color: #EA8597;
 
   max-height: 80%;
   overflow: auto;
@@ -98,9 +98,9 @@
   text-transform: uppercase;
   cursor: pointer;
 
-  border: 2px solid #7951DD;
-  background-color: #FFF;
-  color: #7951DD;
+  border: 2px solid #EA8597;
+  background-color: #1B1524;
+  color: #EA8597;
   margin-top: 10px;
   border-radius: 4px;
 
@@ -108,7 +108,7 @@
     width: 100%;
   }
   &:hover {
-    background-color: #7951DD;
+    background-color: #EA8597;
     color: white;
   }
 }
@@ -143,6 +143,6 @@
 .textNotification {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: #7951DD;
+  color: #EA8597;
   margin-bottom: 20px;
 }
